@@ -43,5 +43,5 @@ jobs:
         env: 
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
-          docker iamge tag temp_watanabe_image:latest $ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}
+          docker image tag temp_watanabe_image:latest $ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}
           docker image push $ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}

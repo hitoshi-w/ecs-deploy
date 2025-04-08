@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: watanabe
   ECS_CLUSTER: watanabe-cluster
   ECS_SERVICE: watanabe-service
-  ECS_TASK_DEFINITION: src/.aws/task-definition.json
+  ECS_TASK_DEFINITION: .aws/task-definition.json
 
 # AWS認証に必要
 permissions:

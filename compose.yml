@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    volumes:
+      - ./src:/var/www
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    volumes:
+      - ./src:/var/www
+    ports:
+      - "8080:80"
+    depends_on:
+      - app
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: watanabe_db
+      POSTGRES_USER: watanabe
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

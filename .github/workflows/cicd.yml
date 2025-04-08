@@ -51,7 +51,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: image-uri
-          path: src/image-uri.txt
+          path: image-uri.txt
 
   deploy:
     runs-on: ubuntu-latest
